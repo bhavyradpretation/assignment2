@@ -5,7 +5,7 @@ async function loadData() {
   display.textContent = "Loading users...";
   try {
     const res = await fetch("https://jsonplaceholder.typicode.com/users");
-    if (!res.ok) throw err("something went wrong");
+    if (!res.ok) throw new Error("something went wrong");
     const data = await res.json();
     const fragment = document.createDocumentFragment();
     data.forEach((user) => {
