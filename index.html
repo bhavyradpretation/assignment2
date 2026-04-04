@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div style="background: lightblue; padding: 10px;">
+  <div style="font-size: 24px;">Dashboard</div>
+  <div>
+    <span style="margin-right: 20px;">Home</span>
+    <span style="margin-right: 20px;">Profile</span>
+    <span>Logout</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="sidebar">
+    <div>Menu 1</div>
+    <div>Menu 2</div>
+    <div>Menu 3</div>
+  </div>
+
+  <div class="main">
+
+    <div class="cards">
+      <div class="card">Users</div>
+      <div class="card">Orders</div>
+      <div class="card">Revenue</div>
+    </div>
+
+    <div>
+      <button onclick="loadData()">Load Data</button>
+    </div>
+
+    <div id="data"></div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

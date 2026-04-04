@@ -1,0 +1,23 @@
+.container {
+  display: block;
+}
+
+.sidebar {
+  width: 250px;
+  background: lightgray;
+}
+
+.main {
+  width: 100%;
+}
+
+.cards {
+  display: block;
+}
+
+.card {
+  width: 200px;
+  height: 100px;
+  background: pink;
+  margin: 10px;
+}
