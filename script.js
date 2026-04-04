@@ -1,16 +1,24 @@
-function loadData() {
-  fetch('https://jsonplaceholder.typicode.com/users')
-    .then(function(res) {
-      return res.json();
-    })
-    .then(function(data) {
-      for (var i = 0; i < data.length; i++) {
-        setTimeout(function() {
-          document.getElementById("data").innerHTML += "<p>" + data[i].name + "</p>";
-        }, 1000);
-      }
-    })
-    .catch(function(err) {
-      console.log(err);
+async function loadData() {
+  const display = document.getElementById("users");
+  const btn = document.querySelector(".load_button");
+  btn.disabled = true;
+  display.textContent = "Loading users...";
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/users");
+    if (!res.ok) throw err("something went wrong");
+    const data = await res.json();
+    const fragment = document.createDocumentFragment();
+    data.forEach((user) => {
+      const p = document.createElement("p");
+      p.textContent = user.name;
+      fragment.appendChild(p);
     });
+
+    display.textContent = "";
+    display.appendChild(fragment);
+  } catch (err) {
+    display.innerHTML = `<span style="color:red;">Error: ${err.message}</span>`;
+  } finally {
+    btn.disabled = false;
+  }
 }

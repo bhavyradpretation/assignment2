@@ -1,46 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header_title">Dashboard</div>
+      <nav class="header_nav">
+        <a href="#Home"  class="header_link">Home</a>
+        <a  href="#About" class="header_link">Profile</a>
+        <button class="logout_button">Logout</button>
+      </nav>
+    </header>
 
-<div style="background: lightblue; padding: 10px;">
-  <div style="font-size: 24px;">Dashboard</div>
-  <div>
-    <span style="margin-right: 20px;">Home</span>
-    <span style="margin-right: 20px;">Profile</span>
-    <span>Logout</span>
-  </div>
-</div>
+    <div class="dashboard">
+      <ul class="dashboard_sidebar">
+        <li class="list_items">Menu 1</li>
+        <li class="list_items">Menu 2</li>
+        <li class="list_items">Menu 3</li>
+      </ul>
 
-<div class="container">
+      <div class="dashboard_main">
+        <div class="dashboard_cards">
+          <div class="dashboard_card_users" id="users">Users</div>
+          <div class="dashboard_card_orders">Orders</div>
+          <div class="dashboard_card_Revenue">Revenue</div>
+        </div>
 
-  <div class="sidebar">
-    <div>Menu 1</div>
-    <div>Menu 2</div>
-    <div>Menu 3</div>
-  </div>
-
-  <div class="main">
-
-    <div class="cards">
-      <div class="card">Users</div>
-      <div class="card">Orders</div>
-      <div class="card">Revenue</div>
+        <div class="load_button_container">
+          <button class="load_button" onclick="loadData()">Load Data</button>
+        </div>
+      </div>
     </div>
 
-    <div>
-      <button onclick="loadData()">Load Data</button>
-    </div>
-
-    <div id="data"></div>
-
-  </div>
-
-</div>
-
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
